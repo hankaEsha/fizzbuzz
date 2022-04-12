@@ -5,25 +5,27 @@ For the multiples of five print “Buzz”
 For numbers which are multiples of both three and five print “FizzBuzz”."
 */
 
+// firts solution:
 const fizzbuzzAlgoritmus1 = () => {
     let numbers = [];
+    // the value is set to 50 just to distinguish the result from the second solution (when run on the web)
     for (let i = 1; i <= 50; i++) {
         if (i % 3) {
-            // pokud neni delitelne 3 - NE
+            // NOT a multiply of 3
             if (i % 5) {
-                // pokud neni delitelne 5 - NE
+                // NOT a multiply of 5
                 numbers.push(i);
             } else {
-                // pokud je delitelne 5 - ANO
+                // IS a multiply of 5
                 numbers.push("Buzz");
             }
         } else {
-            // pokud je delitelne 3 - ANO
+            // IS a multiply of 3
             if (i % 5) {
-                // neni delitelne 5 - NE
+                // NOT a multiply of 5
                 numbers.push("Fizz");
             } else {
-                // je delitelne i 5 - ANO
+                // IS a multiply of 5
                 numbers.push("FizzBuzz");
             }
         }
@@ -31,17 +33,18 @@ const fizzbuzzAlgoritmus1 = () => {
     return numbers;
 };
 
+// second solution / simplification:
 const fizzbuzzAlgoritmus2 = () => {
     let numbers = [];
     for (let i = 1; i <= 100; i++) {
         let result = "";
-        // pokud je delitelne 3
+        // IS a multiply of 3
         if (i % 3 === 0) {
             result += "Fizz";
-        } // pokud je delitelne 5
+        } // IS a multiply of 5
         if (i % 5 === 0) {
             result += "Buzz";
-        }
+        } // did not followed any of the previous conditions
         if (result === "") {
             result = i;
         }
@@ -55,13 +58,14 @@ const fizzbuzzAlgoritmus2 = () => {
 
 /* 
 -- Brief --
-List with numbers (ul/li)
-Slyle of Fizz, Buzz and FizzBuzz at the list
-Optional number of listings
+Create a list with numbers (ul/li)
+Slyle Fizz, Buzz and FizzBuzz at the list
+Add an option to set the number of listings 
 */
 
 const fizzbuzzByOptionalFigure = (listLength) => {
     let output = [];
+    // check of input
     if (Number.isInteger(listLength) && listLength >= 1) {
         for (let i = 1; i <= listLength; i++) {
             if (i % 3 === 0 && i % 5 === 0) {
@@ -71,7 +75,7 @@ const fizzbuzzByOptionalFigure = (listLength) => {
             } else if (i % 5 === 0) {
                 output.push("Buzz");
             } else {
-                output.push(i);
+                output.push(i.toString());
             }
         }
         return output;
@@ -80,45 +84,46 @@ const fizzbuzzByOptionalFigure = (listLength) => {
     }
 };
 
+// function to render the output array
 const renderArray = (arr) => {
     let numbersBase = document.getElementById("numbers-base");
     numbersBase.innerHTML = "";
+    // check of input
     if (Array.isArray(arr)) {
+        // create list
         let numbersList = document.createElement("ol");
+        // create and fill items
         arr.forEach((item) => {
             let numberListItem = document.createElement("li");
-            numberListItem.innerHTML = item;
-            if (item === "Fizz") {
+            numberListItem.textContent = item;
+            if (item.includes("Fizz")) {
                 numberListItem.classList.add("fizz");
-            } else if (item === "Buzz") {
+            }
+            if (item.includes("Buzz")) {
                 numberListItem.classList.add("buzz");
-            } else if (item === "FizzBuzz") {
-                numberListItem.classList.add("fizzbuzz");
             }
             numbersList.appendChild(numberListItem);
         });
         numbersBase.appendChild(numbersList);
     } else {
-        numbersBase.innerHTML = arr;
+        numbersBase.textContent = arr;
     }
 };
 
 const form = document.querySelector("form");
 
+// eventlistener to control which version of fizzbuzz generator is checked by the user
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     let checkedValue = form.querySelector(
         "input[name=generator]:checked"
     ).value;
-    console.log(checkedValue);
     if (checkedValue === "algoritmus-1") {
         renderArray(fizzbuzzAlgoritmus1());
     } else if (checkedValue === "algoritmus-2") {
         renderArray(fizzbuzzAlgoritmus2());
     } else {
-        const listLength = Number.parseInt(
-            document.getElementById("input").value
-        );
+        const listLength = document.getElementById("input").valueAsNumber;
         renderArray(fizzbuzzByOptionalFigure(listLength));
     }
 });
@@ -134,7 +139,8 @@ form.addEventListener("submit", (event) => {
 //     }
 // });
 
-function areArraysIdentical(array1, array2) {
+// debug function to check whether the output of fizzbuzz generators are identical
+const areArraysIdentical = (array1, array2) => {
     if (array1.length === array2.length) {
         for (let i = 0; i < array1.length; i++) {
             if (array1[i] !== array2[i]) {
@@ -145,5 +151,8 @@ function areArraysIdentical(array1, array2) {
     } else {
         return false;
     }
-}
-// console.log(areArraysIdentical(fizzbuzzAlgoritmus1(), fizzbuzzByOptionalFigure(listLength)));
+};
+
+console.assert(
+    areArraysIdentical(fizzbuzzAlgoritmus1(), fizzbuzzByOptionalFigure(50))
+);
