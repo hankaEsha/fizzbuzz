@@ -75,7 +75,7 @@ const fizzbuzzByOptionalFigure = (listLength) => {
             } else if (i % 5 === 0) {
                 output.push("Buzz");
             } else {
-                output.push(i.toString());
+                output.push(i);
             }
         }
         return output;
@@ -93,7 +93,7 @@ const renderArray = (arr) => {
         // create list
         let numbersList = document.createElement("ol");
         // create and fill items
-        arr.forEach((item) => {
+        arr.map(String).forEach((item) => {
             let numberListItem = document.createElement("li");
             numberListItem.textContent = item;
             if (item.includes("Fizz")) {
