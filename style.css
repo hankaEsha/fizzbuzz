@@ -85,6 +85,12 @@ button {
 
 .numbers-base {
     font-family: inherit;
+    opacity: 0;
+}
+
+.numbers-base-visible {
+    transition: opacity linear 500ms;
+    opacity: 1;
 }
 
 ol {

@@ -87,6 +87,7 @@ const fizzbuzzByOptionalFigure = (listLength) => {
 const renderArray = (arr) => {
     let numbersBase = document.getElementById("numbers-base");
     numbersBase.innerHTML = "";
+    numbersBase.classList.remove("numbers-base-visible");
     // check of input
     if (Array.isArray(arr)) {
         // create list
@@ -104,6 +105,9 @@ const renderArray = (arr) => {
             numbersList.appendChild(numberListItem);
         });
         numbersBase.appendChild(numbersList);
+        setTimeout(() => {
+            numbersBase.classList.add("numbers-base-visible");
+        }, 500);
     } else {
         numbersBase.textContent = arr;
     }
