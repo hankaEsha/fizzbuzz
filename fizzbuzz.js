@@ -5,11 +5,10 @@ For the multiples of five print “Buzz”
 For numbers which are multiples of both three and five print “FizzBuzz”."
 */
 
-// firts solution:
-const fizzbuzzAlgoritmus1 = () => {
+// first solution:
+const fizzbuzzAlgorithm1 = () => {
     let numbers = [];
-    // the value is set to 50 just to distinguish the result from the second solution (when run on the web)
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 100; i++) {
         if (i % 3) {
             // NOT a multiply of 3
             if (i % 5) {
@@ -34,7 +33,7 @@ const fizzbuzzAlgoritmus1 = () => {
 };
 
 // second solution / simplification:
-const fizzbuzzAlgoritmus2 = () => {
+const fizzbuzzAlgorithm2 = () => {
     let numbers = [];
     for (let i = 1; i <= 100; i++) {
         let result = "";
@@ -44,7 +43,7 @@ const fizzbuzzAlgoritmus2 = () => {
         } // IS a multiply of 5
         if (i % 5 === 0) {
             result += "Buzz";
-        } // did not followed any of the previous conditions
+        } // NOT a multiply of 3 nor 5
         if (result === "") {
             result = i;
         }
@@ -53,19 +52,19 @@ const fizzbuzzAlgoritmus2 = () => {
     return numbers;
 };
 
-// numbersBase.innerHTML = fizzbuzzAlgoritmus1().join("\n");
-// numbersBase.innerHTML = fizzbuzzAlgoritmus2().join("\n");
+// numbersBase.innerHTML = fizzbuzzAlgorithm1().join("\n");
+// numbersBase.innerHTML = fizzbuzzAlgorithm2().join("\n");
 
 /* 
 -- Brief --
-Create a list with numbers (ul/li)
-Slyle Fizz, Buzz and FizzBuzz at the list
-Add an option to set the number of listings 
+Style Fizz, Buzz and FizzBuzz at a numbered list (ul/li)
+Slyle Fizz, Buzz and FizzBuzz to stand out the list
+Add an option to set the number of generated items 
 */
 
 const fizzbuzzByOptionalFigure = (listLength) => {
     let output = [];
-    // check of input
+    // check the input for being integer, value of 1 or higher
     if (Number.isInteger(listLength) && listLength >= 1) {
         for (let i = 1; i <= listLength; i++) {
             if (i % 3 === 0 && i % 5 === 0) {
@@ -118,10 +117,10 @@ form.addEventListener("submit", (event) => {
     let checkedValue = form.querySelector(
         "input[name=generator]:checked"
     ).value;
-    if (checkedValue === "algoritmus-1") {
-        renderArray(fizzbuzzAlgoritmus1());
-    } else if (checkedValue === "algoritmus-2") {
-        renderArray(fizzbuzzAlgoritmus2());
+    if (checkedValue === "algorithm-1") {
+        renderArray(fizzbuzzAlgorithm1());
+    } else if (checkedValue === "algorithm-2") {
+        renderArray(fizzbuzzAlgorithm2());
     } else {
         const listLength = document.getElementById("input").valueAsNumber;
         renderArray(fizzbuzzByOptionalFigure(listLength));
@@ -154,5 +153,5 @@ const areArraysIdentical = (array1, array2) => {
 };
 
 console.assert(
-    areArraysIdentical(fizzbuzzAlgoritmus1(), fizzbuzzByOptionalFigure(50))
+    areArraysIdentical(fizzbuzzAlgorithm1(), fizzbuzzByOptionalFigure(100))
 );

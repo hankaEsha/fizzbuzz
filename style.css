@@ -54,8 +54,8 @@ fieldset {
 
 legend {
     font-weight: 600;
-    padding-top: 0.5rem;
-    padding-bottom: 0.8rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .optional-figure-text {
@@ -80,7 +80,7 @@ legend {
 
 button {
     margin-inline: 1.6rem;
-    margin-block: 0.5rem;
+    margin-block: 1.2rem;
 }
 
 .numbers-base {

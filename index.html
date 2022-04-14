@@ -26,13 +26,16 @@
         <form>
             <p>
                 Každá z následujících možností využívá jiný algoritmus pro generovaní seznamu čísel.
+                <br/>První algoritmus využívá k sestavení seznamu kroky přesně následující zadání.
+                <br/>Druhý algoritmus je zjednodušením předešlého řešení se zachováním stejného výsledku.
+                <br/>Třetí algoritmus je další optimalizací a zároveň přidává funkci uživatelské volby počtu vygenerovaných čísel.
             </p>
             <fieldset>
                 <legend>Prosím vyberte možnost generování:</legend>
-                <input type="radio" id="algoritmus-1" name="generator" value="algoritmus-1"/>
-                <label for="algoritmus-1">FizzBuzz Algoritmus 1 (vygeneruje 50 čísel)</label >
+                <input type="radio" id="algorithm-1" name="generator" value="algorithm-1"/>
+                <label for="algoritmus-1">FizzBuzz Algoritmus 1 (vygeneruje 100 čísel)</label >
                 <div>
-                    <input type="radio" id="algoritmus-2" name="generator" value="algoritmus-2"/>
+                    <input type="radio" id="algorithm-2" name="generator" value="algorithm-2"/>
                     <label for="algoritmus-2">FizzBuzz Algoritmus 2 (vygeneruje 100 čísel)</label >
                 </div>
                 <div>
