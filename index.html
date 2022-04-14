@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>FizzBuzz generátor</title>
+        <link rel="stylesheet" href="./style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1>Generátor FizzBuzz</h1>
+        <p>
+            <strong>
+                Generátor seznamu čísel umožňující zjištění jejich dělitelnosti.
+            </strong>
+        </p>
+        <p>
+            Všechna čísla dělitelná 3 budou označena jako Fizz.
+            <br/>Všechna čísla dělitelná 5 budou označena jako Buzz.
+            <br/>Všechna čísla dělitelná zároveň 3 i 5 budou označena jako FizzBuzz.
+        </p>
+        <form>
+            <p>
+                Každá z následujících možností využívá jiný algoritmus pro generovaní seznamu čísel.
+                <br/>První algoritmus využívá k sestavení seznamu kroky přesně následující zadání.
+                <br/>Druhý algoritmus je zjednodušením předešlého řešení se zachováním stejného výsledku.
+                <br/>Třetí algoritmus je další optimalizací a zároveň přidává funkci uživatelské volby počtu vygenerovaných čísel.
+            </p>
+            <fieldset>
+                <legend>Prosím vyberte možnost generování:</legend>
+                <input type="radio" id="algorithm-1" name="generator" value="algorithm-1"/>
+                <label for="algoritmus-1">FizzBuzz Algoritmus 1 (vygeneruje 100 čísel)</label >
+                <div>
+                    <input type="radio" id="algorithm-2" name="generator" value="algorithm-2"/>
+                    <label for="algoritmus-2">FizzBuzz Algoritmus 2 (vygeneruje 100 čísel)</label >
+                </div>
+                <div>
+                    <input type="radio" id="optional-figure" name="generator" value="optional-figure" checked="checked"/>
+                    <label for="optional-figure" class="optional-figure-label">FizzBuzz Algoritmus 3 s možností zadání počtu čísel</label >
+                    <div class="optional-figure-elements">
+                        <label class="optional-figure-text" for="input">Zadejte libovolné kladné číslo</label >
+                        <input type="number" id="input" autofocus="autofocus" value="25" min="1"/>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit">Generovat FizzBuzz</button>
+        </form>
+        <div id="numbers-base" class="numbers-base"></div>
+        <script src="./fizzbuzz.js"></script>
+    </body>
+</html>

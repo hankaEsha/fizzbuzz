@@ -1,0 +1,120 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #fbfae5;
+    color: #2a2b2e;
+    font-size: 1rem;
+    font-family: "Open Sans", "Nunito", "Arial Rounded", "Arial", sans-serif;
+    margin-inline: 2rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin-inline: 5rem;
+        line-height: 2;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-block: 0.5rem;
+}
+
+p strong {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.selection-text {
+    text-decoration: underline;
+    margin-bottom: 0.8rem;
+}
+
+legend {
+    font-weight: 600;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.optional-figure-text {
+    margin-left: 1.6rem;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* -- option 1 of hidding the "optional figure elements" using CSS -- */
+.optional-figure-elements {
+    display: none;
+}
+
+:checked ~ .optional-figure-elements {
+    display: block;
+}
+
+/* -- option 2 of hidding the "optional figure elements" using JS -- */
+/* .optional-figure-hidden {
+    display: none;
+} */
+
+button {
+    margin-inline: 1.6rem;
+    margin-block: 1.2rem;
+}
+
+.numbers-base {
+    font-family: inherit;
+    opacity: 0;
+}
+
+.numbers-base-visible {
+    transition: opacity linear 500ms;
+    opacity: 1;
+}
+
+ol {
+    columns: auto;
+    column-width: 7rem;
+    column-gap: 2rem;
+    column-rule: 1px solid black;
+    padding: 0;
+    margin-block: 2rem;
+}
+
+li {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.fizz {
+    background-color: yellow;
+}
+
+.buzz {
+    background-color: lightskyblue;
+}
+
+.fizz.buzz {
+    background-color: greenyellow;
+}
