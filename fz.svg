@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 640 640"
+   version="1.1"
+   id="svg826"
+   sodipodi:docname="fz.svg"
+   width="640"
+   height="640"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs830" />
+  <sodipodi:namedview
+     id="namedview828"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.58476405"
+     inkscape:cx="383.06048"
+     inkscape:cy="405.29167"
+     inkscape:window-width="1599"
+     inkscape:window-height="798"
+     inkscape:window-x="167"
+     inkscape:window-y="340"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="background"
+     style="display:none">
+    <rect
+       style="fill:#ffe000;fill-opacity:1;stroke:#f00000;stroke-width:0;stroke-dasharray:none"
+       id="rect1419"
+       width="701.13751"
+       height="704.55768"
+       x="-30.781647"
+       y="-20.521097" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:571.822px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';display:inline;stroke-width:15.3167"
+     x="14.987576"
+     y="515.73444"
+     id="text1346"
+     transform="scale(0.99328026,1.0067652)"><tspan
+       sodipodi:role="line"
+       id="tspan1344"
+       x="14.987576"
+       y="515.73444"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';stroke-width:15.3167">Fz</tspan></text>
+</svg>

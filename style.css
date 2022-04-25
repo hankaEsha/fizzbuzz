@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background-color: #fbfae5;
+    background-color: #fdfce7;
     color: #2a2b2e;
     font-size: 1rem;
     font-family: "Open Sans", "Nunito", "Arial Rounded", "Arial", sans-serif;
@@ -108,13 +108,13 @@ li {
 }
 
 .fizz {
-    background-color: yellow;
+    background-color: #ffe000;
 }
 
 .buzz {
-    background-color: lightskyblue;
+    background-color: #87cefa;
 }
 
 .fizz.buzz {
-    background-color: greenyellow;
+    background-color: #adff2f;
 }
